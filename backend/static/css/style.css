@@ -1,0 +1,52 @@
+/* ----------------------------------------------------- */
+/* IDS */
+/* ----------------------------------------------------- */
+
+#home-div {
+    padding-top: 7rem;
+}
+
+#text-home {
+    text-align: center;
+    font-size: 50px;
+}
+
+/* ----------------------------------------------------- */
+/* CLASSES */
+/* ----------------------------------------------------- */
+.bg-light .navbar-nav li .nav-link {
+    color: #262626;
+}
+
+a.page-link {
+   color: #262626;
+}
+
+a.page-link:hover {
+    color: #383737;
+ }
+
+li.page-item.active a.page-link{
+    background-color: #262626;
+    border-color: black;
+}
+
+.add-button {
+    margin: 1rem;
+}
+
+.table-list {
+    margin: 0rem 1rem 1rem 1rem;
+}
+
+.container {
+    padding: 2rem;
+}
+
+.add-title {
+    text-align: center;
+}
+
+/* ----------------------------------------------------- */
+/* TAGS */
+/* ----------------------------------------------------- */

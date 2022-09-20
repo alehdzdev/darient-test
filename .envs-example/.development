@@ -1,0 +1,11 @@
+#Settings Base
+SECRET_KEY=6^0($u^rf15e)=6)_&$8j6ybpw@-h1^alw0myymt-vbi!w72o@
+DEBUG=True
+DJANGO_SETTINGS_MODULE=config.settings
+DJANGO_ALLOWED_HOSTS=*
+
+POSTGRES_DATABASE=darient-oms
+POSTGRES_USER=darient-user
+POSTGRES_PASSWORD=darient%2021!
+POSTGRES_ROOT_PASSWORD=darient%2021!
+POSTGRES_HOST=db

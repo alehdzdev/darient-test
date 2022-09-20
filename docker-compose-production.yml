@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  web: &web
+    image: darient:1.0.0
+    build:
+      context: .
+      dockerfile: ./compose/production/Dockerfile
+    volumes:
+      - ./backend:/backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .envs/.production
+    networks:
+      - darient-net
+    expose:
+      - "8000"
+    environment:
+      - VIRTUAL_HOST=example.com
+      - VIRTUAL_PORT=8000
+      - LETSENCRYPT_HOST=example.com
+      - LETSENCRYPT_EMAIL=example@example.com
+
+  db:
+    image: postgres:14.5
+    ports:
+      - "5432:5432"
+    env_file:
+      - .envs/.production
+    volumes:
+      - db_data:/var/lib/postgres
+    networks:
+      - darient-net
+
+volumes:
+  db_data:
+
+networks:
+  darient-net:
+    external:
+      name: nginx-proxy

@@ -1,0 +1,36 @@
+{% extends 'credits/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<a class="btn btn-secondary float-left add-button" href="{% url 'add-clients' %}" role="button">Añadir Cliente</a>
+<table class="table table-striped-columns table-hover table-list">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre y Apellido</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th scope="col">Banco</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for client in clients %}
+        <tr>
+            <td>{{ client.pk }}</td>
+            <td>{{ client.fullname }}</td>
+            <td>{{ client.email }}</td>
+            <td>{{ client.age }}</td>
+            <td>{{ client.bank.name }}</td>
+            <td>
+                <a class="btn btn-danger" href="#">Borrar</a>
+                <a class="btn btn-secondary" href="{% url 'update-clients' client.id %}">Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% include 'credits/pagination.html' %}
+{% endblock content %}

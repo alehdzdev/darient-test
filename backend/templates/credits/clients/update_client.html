@@ -1,0 +1,56 @@
+{% extends 'credits/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="add-title">Actualizar cliente</h1>
+    <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+        <p>
+            <label for="id_fullname">Nombre y Apellido:</label>
+            {{ form.fullname }}
+        </p>
+
+        <p>
+            <label for="id_birthdate">Fecha de nacimiento:</label>
+            {{ form.birthdate }}
+        </p>
+
+        <p>
+            <label for="id_age">Edad:</label>
+            {{ form.age }}
+        </p>
+
+        <p>
+            <label for="id_nationality">Nacionalidad:</label>
+            {{ form.nationality }}
+        </p>
+
+        <p>
+            <label for="id_address">Direccion de habitacion:</label>
+            {{ form.address }}
+        </p>
+
+        <p>
+            <label for="id_email">Email:</label>
+            {{ form.email }}
+        </p>
+
+        <p>
+            <label for="id_telephone">Telefono:</label>
+            {{ form.telephone }}
+        </p>
+
+        <p>
+            <label for="id_type">Tipo de cliente:</label>
+            {{ form.type }}
+        </p>
+
+        <p>
+            <label for="id_bank">Banco:</label>
+            {{ form.bank }}
+        </p>
+        <button type="submit" class="btn btn-secondary" style="width: 100%;">Add</button>
+    </form>
+</div>
+{% endblock content %}

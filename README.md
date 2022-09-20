@@ -57,12 +57,6 @@ Later, the next command::
 
     pre-commit run --all-files
 
-To run test
----
-Execute the next command in the db container before run the test::
-
-    mysql -uroot -p$MYSQL_ROOT_PASSWORD -e "grant all privileges on *.* to '${MYSQL_USER}'@'%';"
-
 # Darient Test base structure
 
 ```

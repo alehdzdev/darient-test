@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-<a class="btn btn-secondary float-left add-button" href="{% url 'add-clients' %}" role="button">Añadir Cliente</a>
+<a class="btn btn-secondary add-button" href="{% url 'add-clients' %}" role="button">Añadir Cliente</a>
 <table class="table table-striped-columns table-hover table-list">
     <thead>
         <tr>
@@ -24,7 +24,10 @@
             <td>{{ client.age }}</td>
             <td>{{ client.bank.name }}</td>
             <td>
-                <a class="btn btn-danger" href="#">Borrar</a>
+                <form action="{% url 'delete-clients' client.pk %}" method="POST">
+                    {% csrf_token %}
+                    <input class="btn btn-danger" name="delete" type="submit" value="Borrar"/>
+                </form>
                 <a class="btn btn-secondary" href="{% url 'update-clients' client.id %}">Editar</a>
             </td>
         </tr>

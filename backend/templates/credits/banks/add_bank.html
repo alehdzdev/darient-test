@@ -1,0 +1,13 @@
+{% extends 'credits/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="add-title">Añadir nuevo banco</h1>
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-secondary" style="width: 100%;">Añadir</button>
+        </form>
+    </div>
+{% endblock content %}

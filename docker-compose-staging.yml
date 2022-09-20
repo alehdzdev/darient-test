@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./compose/production/Dockerfile
-    image: skeleton-web:1.0
+    image: darient-web:1.0
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code

@@ -1,0 +1,34 @@
+{% extends 'credits/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<a class="btn btn-secondary add-button" href="{% url 'add-credits' %}" role="button">Añadir Credito</a>
+<table class="table table-striped-columns table-hover table-list">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Cliente</th>
+            <th scope="col">Plazos</th>
+            <th scope="col">Fecha de registro</th>
+            <th scope="col">Banco</th>
+            <th scope="col">Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for credit in credits %}
+        <tr>
+            <td>{{ credit.pk }}</td>
+            <td>{{ credit.client.fullname }}</td>
+            <td>{{ credit.month_deadline }}</td>
+            <td>{{ credit.date }}</td>
+            <td>{{ credit.bank.name }}</td>
+            <td>{{ credit.type }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% include 'credits/pagination.html' %}
+{% endblock content %}

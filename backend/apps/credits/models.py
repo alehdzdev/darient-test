@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 # Django
-from tabnanny import verbose
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -36,19 +35,25 @@ class Client(BaseModel):
         JURIDICAL = 'Juridico', _('Juridico')
 
     fullname = models.CharField(_('Nombre y Apellido'), max_length=200)
-    birthdate = models.DateField(_('Fecha de Nacimiento'), auto_now=False, auto_now_add=False)
+    birthdate = models.DateField(
+        _('Fecha de Nacimiento'), auto_now=False, auto_now_add=False
+    )
     age = models.PositiveIntegerField(
         _('Edad'),
         blank=True,
         null=True,
-        validators=[MaxValueValidator(99), MinValueValidator(1)]
+        validators=[MaxValueValidator(99), MinValueValidator(1)],
     )
-    nationality = models.CharField(_('Nacionalidad'), max_length=100, blank=True, null=True)
-    address = models.CharField(_('Direccion de habitacion'), max_length=100, blank=True, null=True)
+    nationality = models.CharField(
+        _('Nacionalidad'), max_length=100, blank=True, null=True
+    )
+    address = models.CharField(
+        _('Direccion de habitacion'), max_length=100, blank=True, null=True
+    )
     email = models.EmailField(_('Email'), max_length=200)
     telephone = models.CharField(_('Telefono'), max_length=50, blank=True, null=True)
     type = models.CharField(_('Tipo'), max_length=100, choices=ClientType.choices)
-    bank = models.ForeignKey(Bank,verbose_name=_('Banco'), on_delete=models.CASCADE)
+    bank = models.ForeignKey(Bank, verbose_name=_('Banco'), on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = _('Cliente')
@@ -66,7 +71,9 @@ class Credit(BaseModel):
         MORTGAGE = 'Hipotecario', _('Hipotecario')
         COMMERCIAL = 'Comercial', _('Comercial')
 
-    client = models.ForeignKey(Client, verbose_name=_('Cliente'), on_delete=models.CASCADE)
+    client = models.ForeignKey(
+        Client, verbose_name=_('Cliente'), on_delete=models.CASCADE
+    )
     description = models.CharField(_('Descripcion del Credito'), max_length=200)
     min_pay = models.DecimalField(_('Pago Minimo'), max_digits=10, decimal_places=2)
     max_pay = models.DecimalField(_('Pago Maximo'), max_digits=10, decimal_places=2)

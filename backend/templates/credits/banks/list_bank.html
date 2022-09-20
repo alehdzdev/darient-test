@@ -1,0 +1,30 @@
+{% extends 'credits/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<a class="btn btn-secondary float-left add-button" href="{% url 'add-banks' %}" role="button">Añadir Banco</a>
+<table class="table table-striped-columns table-hover table-list">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Tipo</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for bank in banks %}
+        <tr>
+            <td>{{ bank.pk }}</td>
+            <td>{{ bank.name }}</td>
+            <td>{{ bank.address }}</td>
+            <td>{{ bank.type }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+{% include 'credits/pagination.html' %}
+{% endblock content %}

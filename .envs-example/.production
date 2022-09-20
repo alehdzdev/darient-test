@@ -3,8 +3,8 @@ SECRET_KEY=6^0($u^rf15e)=6)_&$8j6ybpw@-h1^alw0myymt-vbi!w72o@
 DEBUG=True
 DJANGO_APP=config
 
-POSTGRES_DATABASE=skeleton-oms
-POSTGRES_USER=skeleton-user
-POSTGRES_PASSWORD=skeleton%2021!
-POSTGRES_ROOT_PASSWORD=skeleton%2021!
+POSTGRES_DATABASE=postgres
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_ROOT_PASSWORD=postgres
 POSTGRES_HOST=db

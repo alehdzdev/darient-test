@@ -47,11 +47,6 @@ repos:
         - --disable=no-name-in-module,import-error
         - --ignore=migrations
 
-  - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
-    rev: v1.2.1
-    hooks:
-    - id: python-safety-dependencies-check
-
   - repo: https://github.com/PyCQA/bandit
     rev: 1.7.0
     hooks:

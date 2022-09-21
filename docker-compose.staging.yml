@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  web: &web
+    build:
+      context: .
+      dockerfile: ./compose/production/Dockerfile
+    image: darient-web:1.0
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/backend
+    expose:
+      - "8000"
+    depends_on:
+      - db
+    env_file:
+      - .envs/.staging
+    stdin_open: true
+    tty: true
+    networks:
+      - darient-network
+    environment:
+      - VIRTUAL_HOST=
+      - VIRTUAL_PORT=8000
+      - LETSENCRYPT_HOST=
+      - LETSENCRYPT_EMAIL=
+
+  db:
+    image: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./backend:/backend
+    env_file:
+      - .envs/.development
+
+networks:
+  darient-network:
+    external:
+      name: nginx-proxy

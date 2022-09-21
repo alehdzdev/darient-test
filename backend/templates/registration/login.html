@@ -1,0 +1,14 @@
+{% extends 'credits/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <h2 class="d-flex aligns-items-center justify-content-center pt-5">Log In</h2>
+    <div class="d-flex aligns-items-center justify-content-center">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-secondary" type="submit">Log In</button>
+        </form>
+    </div>
+{% endblock content %}

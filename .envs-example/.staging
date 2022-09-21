@@ -1,8 +1,8 @@
 #Settings Base
 SECRET_KEY=6^0($u^rf15e)=6)_&$8j6ybpw@-h1^alw0myymt-vbi!w72o@
 DEBUG=True
-DJANGO_APP=config
-DJANGO_ALLOWED_HOSTS=
+DJANGO_APP=config.settings
+DJANGO_ALLOWED_HOSTS=*
 
 POSTGRES_DATABASE=postgres
 POSTGRES_USER=postgres

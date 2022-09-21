@@ -32,7 +32,7 @@ services:
     volumes:
       - ./backend:/backend
     env_file:
-      - .envs/.development
+      - .envs/.staging
 
 networks:
   darient-network:

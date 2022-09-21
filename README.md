@@ -1,10 +1,27 @@
 Welcome to Darient Test!
 ==========================
 
-Url
+Project Url
 ---
 
 https://darient.alehdzdev.com
+
+Login credentials::
+---
+    user: root
+    pass: root
+
+Url List
+---
+ - /
+ - clients
+ - clients/add
+ - clients/update/<pk>
+ - clients/delete/<pk>
+ - banks
+ - banks/add
+ - credits
+ - credits/add
 
 Env
 ---

@@ -50,7 +50,9 @@ LOCAL_APPS = ['core', 'credits']
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
+    # 'csp.middleware.CSPMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    # 'django_permissions_policy.PermissionsPolicyMiddleware'
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -180,6 +182,7 @@ SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_HTTPONLY = True
 SECURE_BROWSER_XSS_FILTER = True
 X_FRAME_OPTIONS = 'DENY'
+CSRF_TRUSTED_ORIGINS = ['https://darient.alehdzdev.com']
 
 # Sites
 SITE_ID = 1
